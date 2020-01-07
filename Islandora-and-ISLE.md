@@ -15,7 +15,7 @@ The theme `pld` is based on a bare bones Drupal starter theme called [Basic](htt
 
 ## Islandora Overrides
 
-**Preprocess Function overrides** `pld/sites/all/pld/includes/`
+**Preprocess Function overrides** `pld/sites/all/themes/pld/includes/`
 
 This directory contains files that override template preprocess functions in various islandora modules. You would override a preprocess function to introduce data you want to pass to the template that is not included in the original preprocess function.  If a module use a preprocess function to generate data that is passed to a template you can override it by including in your theme template.php file the preprocess function you want to override.  In the case of our theme I have set up a directory with a file for each islandora content model/module I'm overriding. Those files are included in the template file using the `require();` function.
 
@@ -33,7 +33,7 @@ This directory contains files that override template preprocess functions in var
 
 ---
 
-:file_folder: **Template Directory Location:** `pld/sites/all/pld/templates/`
+:file_folder: **Template Directory Location:** `pld/sites/all/themes/pld/templates/`
 
 There are a number of files in this directory named `islandora-[some-template-name].tpl.php`. These are the specific files I used to override the presentation of specific parts of islandora and, in some cases, the data being passes to those templates. The biggest modification is the use of larger image datastreams for collection template files and search template files. In most cases I'm calling the **MEDIUM_SIZE** datastream, which is generated on ingest for Basic Image content model and Compound Content model (parent object only). For the Book Content Model I'm using the **JP2** datastream.
 I did this to provide larger image thumbnails in grids since the default Islandora thumbnail size is pretty tiny. There may be a better way to do this such as modifying the Islandora module to adjust the size thumbnail datastream produced.
